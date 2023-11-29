@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.task-list {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.task-list h1 {
+    margin-bottom: 20px;
+}
+
+.task {
+    list-style: none;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+}
+
+.btn-novo,
+.btn-concluir,
+.btn-editar,
+.btn-apagar {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-concluir {
+    background-color: #5cb85c;
+    color: white;
+}
+
+.btn-concluir:hover{
+    background-color: #199a19;
+}
+
+.btn-editar {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.btn-editar:hover{
+    background-color: #a2650d;
+}
+
+.btn-apagar {
+    background-color: #d9534f;
+    color: white;
+}
+
+.btn-apagar:hover{
+    background-color: #ad1914;
+}
+
+.btn-novo {
+    background-color: #3c4dbe;
+    color: white;
+}
+
+.btn-novo:hover{
+    background-color: #162694;
+}
