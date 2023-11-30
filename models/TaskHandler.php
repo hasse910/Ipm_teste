@@ -1,5 +1,5 @@
 <?php
-include '../config/database.php';
+include './../config/database.php';
 
 class TaskHandler {
     private $pdo;
@@ -28,7 +28,7 @@ class TaskHandler {
         $stmt = $this->pdo->prepare("INSERT INTO tasks (TITULO, DATE) VALUES (?, ?)");
         $stmt->execute([$title, $deadline]);
 
-        header('Location: /Ipm_teste/');
+        header('Location: /');
         exit;
 
 //        return json_encode(['message' => 'Tarefa criada com sucesso']);
@@ -52,7 +52,7 @@ class TaskHandler {
         $stmt = $this->pdo->prepare("UPDATE tasks SET STATUS=1 WHERE ID=? ;");
         $stmt->execute([$id]);
 
-        header('Location: /Ipm_teste/');
+        header('Location: /');
         exit;
 
 //        return json_encode(['message' => 'Tarefa concluida com sucesso']);
@@ -64,7 +64,7 @@ class TaskHandler {
         $stmt = $this->pdo->prepare("UPDATE tasks SET DELETED=1 WHERE ID=?");
         $stmt->execute([$id]);
 
-        header('Location: /Ipm_teste/');
+        header('Location: /');
         exit;
 
 //        return json_encode(['message' => 'Tarefa deletada com sucesso']);

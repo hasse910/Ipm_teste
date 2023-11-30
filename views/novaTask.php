@@ -12,11 +12,12 @@ $tarefas = json_decode($taskHandler->getCplTasks(), true);
     <meta charset="UTF-8">
     <title>Minhas Tarefas</title>
     <link rel="stylesheet" href="../public/css/styles.css">
+    <link rel="icon" type="image/png" href="/public/favicon.png">
 </head>
 <body>
 <div class="task-list">
     <h1>Nova Tarefa</h1>
-    <form class="task-actions" action="/Ipm_teste/controllers/CriarTask.php" method="POST">
+    <form class="task-actions" action="/controllers/CriarTask.php" method="POST">
         <input type="text" id="TASK" name="TASK" placeholder="Digite a tarefa a realizar" required>
 
         <input type="date" id="DATE" name="DATE" required>

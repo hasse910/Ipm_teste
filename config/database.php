@@ -1,8 +1,8 @@
 <?php
-$host = '*********';
-$dbname = '*********';
-$username = '**********';
-$password = '*******';
+$host = '192.185.209.245';
+$dbname = 'realme22_ipm';
+$username = 'realme22_ipm';
+$password = 'G9t@CX!*';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);

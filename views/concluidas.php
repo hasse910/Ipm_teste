@@ -12,6 +12,7 @@ $tarefas = json_decode($taskHandler->getCplTasks(), true);
     <meta charset="UTF-8">
     <title>Minhas Tarefas</title>
     <link rel="stylesheet" href="../public/css/styles.css">
+    <link rel="icon" type="image/png" href="/public/favicon.png">
 </head>
 <body>
 <div class="task-list">
@@ -23,7 +24,7 @@ $tarefas = json_decode($taskHandler->getCplTasks(), true);
             </li>
         <?php } ?>
     </ul>
-    <a href="/Ipm_teste/" class="botao-redirecionar">Volta</a>
+    <a href="/" class="botao-redirecionar">Volta</a>
 </div>
 </body>
 </html>
