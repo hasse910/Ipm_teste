@@ -10,19 +10,28 @@ class TaskHandler {
     }
 
     public function getAllTasks() {
-        $stmt = $this->pdo->query("SELECT * FROM tasks");
+        $stmt = $this->pdo->query("SELECT * FROM tasks WHERE STATUS <> 1 AND DELETED <> 1");
+        $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return json_encode($tasks);
+    }
+
+    public function getCplTasks() {
+        $stmt = $this->pdo->query("SELECT * FROM tasks WHERE STATUS = 1");
         $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return json_encode($tasks);
     }
 
     public function createTask($data) {
-        $title = $data['title'];
-        $description = $data['description'];
-        $deadline = $data['deadline'];
+        $title = $data['TASK'];
+        $deadline = $data['DATE'];
 
-        $stmt = $this->pdo->prepare("INSERT INTO tasks (TITULO, DESCRICAO, DATE) VALUES (?, ?, ?)");
-        $stmt->execute([$title, $description, $deadline]);
-        return json_encode(['message' => 'Tarefa criada com sucesso']);
+        $stmt = $this->pdo->prepare("INSERT INTO tasks (TITULO, DATE) VALUES (?, ?)");
+        $stmt->execute([$title, $deadline]);
+
+        header('Location: /Ipm_teste/');
+        exit;
+
+//        return json_encode(['message' => 'Tarefa criada com sucesso']);
     }
 
     public function updateTask($data) {
@@ -37,13 +46,29 @@ class TaskHandler {
         return json_encode(['message' => 'Tarefa atualizada com sucesso']);
     }
 
-    public function deleteTask($data) {
-        $id = $data['id'];
+    public function concludeTask($data) {
+        $id = intval($data['ID']);
+
+        $stmt = $this->pdo->prepare("UPDATE tasks SET STATUS=1 WHERE ID=? ;");
+        $stmt->execute([$id]);
+
+        header('Location: /Ipm_teste/');
+        exit;
+
+//        return json_encode(['message' => 'Tarefa concluida com sucesso']);
+    }
+
+    public function apagarTask($data) {
+        $id = intval($data['ID']);
 
         $stmt = $this->pdo->prepare("UPDATE tasks SET DELETED=1 WHERE ID=?");
         $stmt->execute([$id]);
-        return json_encode(['message' => 'Tarefa deletada com sucesso']);
+
+        header('Location: /Ipm_teste/');
+        exit;
+
+//        return json_encode(['message' => 'Tarefa deletada com sucesso']);
     }
 }
 
-?>
+

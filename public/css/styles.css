@@ -74,10 +74,28 @@ body {
 }
 
 .btn-novo {
-    background-color: #3c4dbe;
-    color: white;
+    font-size: 17px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4b5cd5;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
 .btn-novo:hover{
     background-color: #162694;
 }
+
+.botao-redirecionar {
+    display: inline-block;
+    padding: 10px 11px;
+    background-color: #545454;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.botao-redirecionar:hover {
+    background-color: #2d2d2d;
+}
+
